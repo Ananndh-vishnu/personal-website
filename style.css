@@ -1,0 +1,94 @@
+.preloader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black; /* Set preloader background to black */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container {
+  width: 100px; /* Change this to the width of your logo */
+  height: 100px; /* Change this to the height of your logo */
+  position: relative;
+  animation: flicker-rotate 1s linear infinite;
+}
+
+.logo-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@keyframes flicker-rotate {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  10% {
+    opacity: 0.8;
+    transform: rotate(0.5deg);
+  }
+  20% {
+    opacity: 1;
+    transform: rotate(1deg);
+  }
+  30% {
+    opacity: 0.6;
+    transform: rotate(2deg);
+  }
+  40% {
+    opacity: 1;
+    transform: rotate(5deg);
+  }
+  50% {
+    opacity: 0.4;
+    transform: rotate(11deg);
+  }
+  60% {
+    opacity: 1;
+    transform: rotate(22deg);
+  }
+  70% {
+    opacity: 0.2;
+    transform: rotate(45deg);
+  }
+  80% {
+    opacity: 1;
+    transform: rotate(90deg);
+  }
+  90% {
+    opacity: 0.1;
+    transform: rotate(180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+
+/* Stop animation after 4 seconds */
+.preloader-container {
+  animation: fadeOut 1s 4s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
